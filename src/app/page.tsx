@@ -13,7 +13,7 @@ import { PiHandWavingFill } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { PiSuitcaseLight } from "react-icons/pi";
-import { Playfair_Display } from "next/font/google";
+// import { Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import MailToggle from "./mailpopup";
 
@@ -21,9 +21,9 @@ const Roboto = Roboto_Mono({
   subsets: ["latin"],
 });
 
-const PfD = Playfair_Display({
-  subsets: ["latin"],
-});
+// const PfD = Playfair_Display({
+//   subsets: ["latin"],
+// });
 
 const DownloadResume = () => {
   const link = document.createElement("a");
@@ -66,13 +66,12 @@ export default function Home() {
     }
   });
 
-  const bgWhite = "../../public/porsche-white-1.jpg";
 
   return (
     <main
       className={`w-screen h-screen bg-transparent ${Roboto.className} transition-colors duration-400ms`}
     >
-      <div className="fixed inset-0 -z-10 bg-[url(/porsche-white-1.jpg)] dark:bg-[url(/bmw-black-2.jpg)] bg-fixed bg-cover transition-colors duration-500"></div>
+      <div className="fixed inset-0 -z-10 bg-[url(/mobile-car-white.jpg)] lg:bg-[url(/porsche-white-1.jpg)] dark:lg:bg-[url(/bmw-black-2.jpg)] bg-fixed bg-cover transition-colors duration-500"></div>
       <div className="centre-div">
         <div className="header-dark-mode-toggle min-h-[40px] bg-transparent w-full flex justify-end">
           <DarkToggleButton onClick={ChangeTheme} />
