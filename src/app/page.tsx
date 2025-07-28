@@ -1,103 +1,198 @@
-import Image from "next/image";
+"use client";
+
+import { Roboto_Mono } from "next/font/google";
+import { Button } from "@/components/ui/button";
+import { FiGithub } from "react-icons/fi";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { CgMail } from "react-icons/cg";
+import { Dot } from "lucide-react";
+import { ArrowDownToLine } from "lucide-react";
+import { GraduationCap } from "lucide-react";
+import { MoonStar } from "lucide-react";
+import { PiHandWavingFill } from "react-icons/pi";
+import { useEffect, useState } from "react";
+import { IoLocationOutline } from "react-icons/io5";
+import { PiSuitcaseLight } from "react-icons/pi";
+import { Playfair_Display } from "next/font/google";
+import Link from "next/link";
+import MailToggle from "./mailpopup";
+
+const Roboto = Roboto_Mono({
+  subsets: ["latin"],
+});
+
+const PfD = Playfair_Display({
+  subsets: ["latin"],
+});
+
+const DownloadResume = () => {
+  const link = document.createElement("a");
+  link.href = "api/resume";
+  link.download = "";
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+const GetTheme = () => {
+  if (typeof window === "undefined") return "";
+  const isDark = window.matchMedia("(prefers-color-scheme:dark)").matches;
+  if (isDark) return "dark";
+  else return "";
+};
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [dark, setDark] = useState(GetTheme);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const [isMailVisible, setIsMailVisible] = useState(false);
+
+  const ChangeTheme = () => {
+    const newTheme = dark === "dark" ? "light" : "dark";
+    setDark(newTheme);
+
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
+  useEffect(() => {
+    if (dark === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  });
+
+  const bgWhite = "../../public/porsche-white-1.jpg";
+
+  return (
+    <main
+      className={`w-screen h-screen bg-transparent ${Roboto.className} transition-colors duration-400ms`}
+    >
+      <div className="fixed inset-0 -z-10 bg-[url(/porsche-white-1.jpg)] dark:bg-[url(/bmw-black-2.jpg)] bg-fixed bg-cover transition-colors duration-500"></div>
+      <div className="centre-div">
+        <div className="header-dark-mode-toggle min-h-[40px] bg-transparent w-full flex justify-end">
+          <DarkToggleButton onClick={ChangeTheme} />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="bio-data w-full bg-light  dark:bg-dark mt-20 flex flex-col-reverse smallDesign:flex-row smallDesign:justify-between rounded-2xl shadow-2xl">
+          <div className="mt-5 intro flex flex-col items-center smallDesign:grid ml-7 w-auto">
+            <div className="name text-2xl phone:text-3xl bg-transparent flex flex-row font-black text-lighttext dark:text-darktext gap-3">
+              <h2 className={`text-lighttext dark:text-darktext`}>
+                Hello! I&apos;m Isaac
+              </h2>
+              <PiHandWavingFill
+                size={"30px"}
+                className="animate-hand text-yellow-400 mt-1.5 ml-2"
+              />
+            </div>
+            <div className="flex text-lighttext dark:text-darktext mr-1 mt-2">
+              <PiSuitcaseLight size="20px" className=" mt-1" />
+              <p className="ml-1.5 mt-0.5 text-lightsectext dark:text-darksectext">
+                Full-Stack Developer
+              </p>
+            </div>
+            <div className="flex text-lighttext dark:text-darktext mr-1 mt-2">
+              <IoLocationOutline size="20px" className=" mt-1" />
+              <p className="ml-1.5 mt-0.5 text-lightsectext dark:text-darksectext">
+                India
+              </p>
+            </div>
+            <div className="flex text-lighttext dark:text-darktext mr-1 mt-2">
+              <GraduationCap size="20px" className=" mt-1" />
+              <p className="ml-1.5 mt-0.5 text-lightsectext dark:text-darksectext">
+                2025 College Graduate
+              </p>
+            </div>
+            <div>
+              <p className="text-lighttext dark:text-darktext font-medium mt-10 mb-2 mr-4 smallDesign:mt-10 smallDesign:mb-2 text-[18px]">
+                22 years old. I like cars and building stuff through code!
+              </p>
+            </div>
+          </div>
+          <div className="photo-container w-[220px] h-[220px] mx-auto mt-5 smallDesign:mx-2 smallDesign:my-auto bg-[url(/cat.jpg)] bg-center rounded-full flex-none"></div>
+        </div>
+        <div className="links flex flex-col items-center linkBreakdown:flex-row linkBreakdown:justify-center smallDesign:justify-start px-0 w-full rounded-2xl mt-2 py-2 bg-transparent dark:bg-transparent h-auto">
+          <div>
+            <Button
+              variant="secondary"
+              size="icon"
+              className="mt-0.5 mb-0.5 linkBreakdown:mt-0 mx-1 linkBreakdown:mb-1 bg-lightlight text-lighttext hover:bg-darklight hover:text-darktext dark:bg-darklight dark:text-darktext dark:hover:bg-lightlight dark:hover:text-lighttext transition-colors duration-300 shadow-xl"
+            >
+              <Link
+                href="https://github.com/Isaac-Franklyn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiGithub />
+              </Link>
+            </Button>
+            <Button
+              variant="secondary"
+              size="icon"
+              className="mt-0.5 mb-0.5 linkBreakdown:mt-0 mx-1 linkBreakdown:mb-1 dark:bg-darklight dark:text-darktext dark:hover:bg-lightlight dark:hover:text-lighttext text-lighttext hover:bg-darklight hover:text-darktext bg-lightlight transition-colors duration-300 shadow-xl"
+            >
+              <Link
+                href="https://www.linkedin.com/in/isaac-albert/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn />
+              </Link>
+            </Button>
+            <Button
+              onClick={() => setIsMailVisible(true)}
+              variant="secondary"
+              size="icon"
+              className="mt-0.5 mb-0.5 linkBreakdown:mt-0 mx-1 linkBreakdown:mb-1 dark:bg-darklight dark:text-darktext dark:hover:bg-lightlight dark:hover:text-lighttext text-lighttext hover:bg-darklight hover:text-darktext bg-lightlight transition-colors duration-300 shadow-xl"
+            >
+              <CgMail />
+            </Button>
+          </div>
+          <div>
+            <Button
+              variant={"secondary"}
+              className="mt-0.5 mb-0.5 linkBreakdown:mt-0 mx-1 linkBreakdown:mb-1 dark:bg-darklight dark:text-darktext dark:hover:bg-lightlight dark:hover:text-lighttext text-lighttext hover:bg-darklight hover:text-darktext bg-lightlight transition-colors duration-300 shadow-xl"
+              onClick={DownloadResume}
+            >
+              <ArrowDownToLine /> Resume
+            </Button>
+          </div>
+          <div>
+            <Button
+              size="default"
+              variant={"outline"}
+              className="border-2 border-darksectext dark:border-2 dark:border-lightsectext  mt-0.5 mb-0.5 linkBreakdown:mt-0 mx-1 linkBreakdown:mb-1 text-xs bg-lightlight dark:bg-darklight dark:text-darktext  text-lighttext hover:bg-darklight hover:text-darktext transition-colors duration-300 shadow-xl"
+            >
+              <Dot
+                size={108}
+                color="#2ec27e"
+                className="motion-safe:animate-ping text-[8px]"
+              />
+              Available for work
+            </Button>
+          </div>
+        </div>
+        <MailToggle
+          closeClick={() => setIsMailVisible(false)}
+          showMail={isMailVisible}
+        />
+      </div>
+    </main>
+  );
+}
+
+function DarkToggleButton({ onClick }: { onClick: () => void }) {
+  return (
+    <Button
+      onClick={onClick}
+      variant={"secondary"}
+      size={"icon"}
+      className="mt-5 mr-1 dark:text-lighttext bg-darklight text-darktext hover:text-lighttext dark:hover:text-darktext dark:bg-lightlight dark:hover:bg-darklight transition-colors duration-500"
+    >
+      <MoonStar />
+    </Button>
   );
 }
