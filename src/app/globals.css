@@ -9,6 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-roboto: var(--font-roboto-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -132,15 +133,18 @@
   --breakpoint-smallDesign: 640px;
   --breakpoint-phone: 370px;
   --breakpoint-linkBreakdown: 430px;
+  --breakpoint-largeBg:1440px;
+  --breakpoint-mediumBg:1080px;
+  --breakpoint-smallBg:720px;
 
   /* --bg-porsche-light: url(/public/porsche-white-1.jpg);
   --bg-porsche-dark: url(/public/porsche-black-1.jpg); */
 }
 
 @keyframes wave {
-  0% { transform: scale(1.5) rotate(0deg); }
-  50% { transform: scale(1.5) rotate(20deg); }
-  100% { transform: scale(1.5) rotate(-20deg); }
+  0% { transform: scale(1.2) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(20deg); }
+  100% { transform: scale(1.2) rotate(-20deg); }
 }
 .animate-hand:hover { 
    animation: wave 2s ease-in 1;
@@ -149,15 +153,26 @@
 
 @layer components {
   .centre-div{
-    @apply  w-screen md:max-w-[800px] h-auto m-auto flex flex-col justify-center bg-transparent;
+    @apply  w-screen phone:w-[90vw] mediumBg:w-[70vw] largeBg:w-[50vw]
   }
   .card-style {
     @apply max-w-[60vw] h-auto bg-light dark:bg-dark px-5 py-2 rounded-3xl shadow-2xl shadow-lightshadow dark:shadow-none;
   }
-  .button-color {
-    @apply bg-lightlight dark:bg-darklight dark:text-darktext dark:hover:bg-lightlight dark:hover:text-lighttext text-lighttext hover:bg-darklight hover:text-darktext shadow-xl;
+
+  .bg-main {
+    @apply bg-lightdark mediumBg:bg-[url(/porsche-white-1.jpg)] dark:bg-darkdark dark:mediumBg:bg-[url(/bmw-black-2.jpg)] bg-cover
   }
 
+  .bg-normal {
+    @apply bg-lightlight dark:bg-darklight 
+  }
+
+  .text-only {
+    @apply text-lighttext dark:text-darktext
+  }
+  .bg-button {
+    @apply bg-lightlight dark:bg-darklight text-lighttext dark:text-darktext
+  }
 }
 
 @layer base {
