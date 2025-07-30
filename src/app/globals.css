@@ -163,7 +163,7 @@
   }
 
   .bg-main {
-    @apply bg-lightdark mediumBg:bg-[url(/porsche-white-1.jpg)] dark:bg-darkdark dark:mediumBg:bg-[url(/bmw-black-2.jpg)] bg-cover
+    @apply h-full w-full bg-lightdark absolute mediumBg:inset-0 mediumBg:bg-[url(/porsche-white-1.jpg)] dark:bg-darkdark dark:mediumBg:bg-[url(/bmw-black-2.jpg)] bg-cover
   }
 
   .bg-normal {

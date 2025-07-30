@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <>
       <main className="font-roboto">
-        <div className="absolute inset-0 -z-20 bg-main"></div>
+        <div className="-z-20 bg-main"></div>
         <div className="glass-effectBg -z-10 fixed inset-0 bg-darklight/20 backdrop-blur-sm"></div>
         <div className="dark-header centre-div m-auto mt-2 p-2 min-h-[40px] flex justify-between  ">
           <div className="av-for-work">
@@ -191,76 +191,94 @@ export default function Home() {
           <div className="heading text-only not-skillMini:text-xl text-2xl font-bold">
             <h2>Current Technologies</h2>
           </div>
-          <div className="skill-boxes mt-5 not-skillMini:pr-30 grid grid-cols-1 skillMini:grid-cols-2 skillSm:grid-cols-3 skillMed:grid-cols-4 gap-4">
-            <div className="nextjs flex items-center p-2 pl-3 pr-5 bg-normal rounded-xl shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
+          <div className="skill-boxes mt-5 grid grid-cols-2 skillMini:grid-cols-2 skillSm:grid-cols-3 skillMed:grid-cols-4 gap-4">
+            <div className="nextjs flex items-center p-2 not-skillMini:pl-2 not-skillMini:gap-2 pr-5 bg-normal rounded-xl shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
-                <RiNextjsFill size={"48px"} />
+                <RiNextjsFill className="not-skillMini:size-[32px] not-skillSm:size-[40px] size-[48px]" />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">NextJs</h4>
-                <p className="text-sec text-[12px] mt-1 font-normal">
+                <p className="text-sec not-skillMini:text-[9px] text-[12px] mt-1 font-normal">
                   React Framework
                 </p>
               </div>
             </div>
-            <div className="react bg-normal rounded-xl flex items-center p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
+            <div className="react bg-normal rounded-xl flex items-center not-skillMini:pl-2 not-skillMini:gap-2 p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
-                <FaReact size={"48px"} color="#61DBFB" />
+                <FaReact
+                  className="not-skillMini:size-[28px] not-skillSm:size-[36px] size-[40px]"
+                  color="#61DBFB"
+                />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">React</h4>
-                <p className="text-sec text-[10px] mt-1 font-normal">
+                <p className="text-sec not-skillMini:text-[9px] text-[10px] mt-1 font-normal">
                   Front-end Framework
                 </p>
               </div>
             </div>
-            <div className="typescript bg-normal rounded-xl flex items-center p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
+            <div className="typescript bg-normal rounded-xl flex items-center p-2 pl-3 not-skillMini:pl-1 not-skillMini:gap-2 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
-                <BiLogoTypescript size={"48px"} color="#3178C6" />
+                <BiLogoTypescript
+                  className="not-skillMini:size-[32px] not-skillSm:size-[40px] size-[48px]"
+                  color="#3178C6"
+                />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">Typescript</h4>
-                <p className="text-sec text-[10px] mt-1 font-normal">
+                <p className="text-sec not-skillMini:text-[9px] text-[10px] mt-1 font-normal">
                   Back-end Language
                 </p>
               </div>
             </div>
-            <div className="supabase bg-normal rounded-xl flex items-center p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light ">
+            <div className="supabase bg-normal rounded-xl flex items-center p-2 pl-3 not-skillMini:gap-2 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light ">
               <div className="basis-1/3">
-                <RiSupabaseFill size={"40px"} color="#34b27b" />
+                <RiSupabaseFill
+                  className="not-skillMini:size-[24px] not-skillSm:size-[32px] size-[40px]"
+                  color="#34b27b"
+                />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">Supabase</h4>
-                <p className="text-sec text-[10px] mt-1 font-normal">
+                <p className="text-sec not-skillMini:text-[9px] text-[10px] mt-1 font-normal">
                   Back-end tool
                 </p>
               </div>
             </div>
-            <div className="tailwind bg-normal rounded-xl flex items-center p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
+            <div className="tailwind bg-normal rounded-xl flex items-center not-skillMini:pl-1.5 not-skillMini:gap-2 p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
-                <RiTailwindCssFill size={"40px"} color="#2596be" />
+                <RiTailwindCssFill
+                  className="not-skillMini:size-[24px] not-skillSm:size-[32px] size-[40px]"
+                  color="#2596be"
+                />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">tailwindcss</h4>
-                <p className="text-sec text-[10px] mt-1 font-normal">
+                <p className="text-sec not-skillMini:text-[9px] text-[10px] mt-1 font-normal">
                   Front-end tool
                 </p>
               </div>
             </div>
-            <div className="golang bg-normal rounded-xl flex items-center p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
+            <div className="golang bg-normal rounded-xl flex items-center p-2 not-skillMini:gap-2 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
-                <FaGolang size={"48px"} color="#00ADD8 " />
+                <FaGolang
+                  className="not-skillMini:size-[32px] not-skillSm:size-[40px] size-[48px]"
+                  color="#00ADD8 "
+                />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">Golang</h4>
-                <p className="text-sec text-[10px] mt-1 font-normal">
+                <p className="text-sec not-skillMini:text-[8px] text-[10px] mt-1 font-normal">
                   Back-end language
                 </p>
               </div>
             </div>
             <div className="git bg-normal rounded-xl flex items-center p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
-                <FaGitAlt size={"40px"} color="#f14e32" />
+                <FaGitAlt
+                  className="not-skillMini:size-[24px] not-skillSm:size-[32px] size-[40px]"
+                  color="#f14e32"
+                />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">Git</h4>
@@ -269,7 +287,7 @@ export default function Home() {
             </div>
             <div className="dsa bg-normal rounded-xl flex items-center p-2 pl-3 pr-5 shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
-                <MdDataObject size={"36px"} />
+                <MdDataObject className="not-skillMini:size-[18px] not-skillSm:size-[28px] size-[36px]" />
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">DSA</h4>
