@@ -212,7 +212,7 @@ export default function Home() {
               </div>
               <div className="text-only basis-2/3">
                 <h4 className="text-[16px] font-medium mb-1">React</h4>
-                <p className="text-sec not-skillMini:text-[9px] text-[10px] mt-1 font-normal">
+                <p className="text-sec not-skillMini:text-[8px] text-[10px] mt-1 font-normal">
                   Front-end Framework
                 </p>
               </div>
