@@ -170,6 +170,9 @@
   .text-only {
     @apply text-lighttext dark:text-darktext
   }
+  .text-sec {
+    @apply text-lightsectext dark:text-darksectext
+  }
   .bg-button {
     @apply bg-lightlight dark:bg-darklight text-lighttext dark:text-darktext
   }
