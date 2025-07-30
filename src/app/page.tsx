@@ -135,7 +135,7 @@ export default function Home() {
             </div>
           </div>
           <div className="photo basis-1/3 flex items-center rounded-2xl bg-lightlight/70 dark:bg-darklight shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
-            <div className="m-auto my-2 w-2/5 skillSm:w-9/10 aspect-square rounded-full bg-[url(/cat.jpg)] bg-cover"></div>
+            <div className="m-auto my-2 w-2/5 skillSm:w-3/4 aspect-square rounded-full bg-[url(/cat.jpg)] bg-cover"></div>
           </div>
         </div>
         <div className="links-cont centre-div m-auto p-2 flex ">
