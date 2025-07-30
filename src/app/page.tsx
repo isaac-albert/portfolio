@@ -80,7 +80,7 @@ export default function Home() {
             <Button
               size="sm"
               variant={"static_outline"}
-              className="text-only text-[12px] shadow-xl/20 dark:inset-shadow-2xs/20 dark:inset-shadow-light"
+              className="text-only not-skillMini:text-[10px] text-[12px] shadow-xl/20 dark:inset-shadow-2xs/20 dark:inset-shadow-light"
             >
               <Dot
                 size={108}
@@ -99,16 +99,16 @@ export default function Home() {
             <MoonStar />
           </Button>
         </div>
-        <div className="bio-data centre-div m-auto mt-10 flex gap-2 p-2 ">
+        <div className="bio-data centre-div m-auto mt-10 flex flex-col-reverse skillSm:flex-row gap-2 p-2 ">
           <div className="data basis-2/3 px-1.5 pt-2 pb-2 rounded-2xl bg-lightlight/70 dark:bg-darklight shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
-            <div className="name ml-2 flex gap-2 text-4xl font-black">
+            <div className="name ml-2 flex gap-2 text-3xl skillSm:text-4xl font-black">
               <h2 className="text-only">Hello! I&apos;m Isaac</h2>
               <PiHandWavingFill
                 size={"35px"}
                 className="animate-hand text-yellow-400 mt-1"
               />
             </div>
-            <div className="creds ml-2 mt-5 text-only">
+            <div className="creds ml-2 mt-5 text-only not-skillSm:text-[14px]">
               <div className=" flex mr-1 mt-2">
                 <PiSuitcaseLight size="20px" className=" mt-1" />
                 <p className="ml-1.5 mt-0.5 text-lightsectext dark:text-darksectext">
@@ -128,14 +128,14 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="description mt-10 ml-2 text-[16px] ">
+            <div className="description mt-10 ml-2 text-[16px] not-skillSm:text-[14px]">
               <p className="text-only font-normal">
                 22 years old. I like cars and building stuff through code!
               </p>
             </div>
           </div>
-          <div className="photo basis-1/3 rounded-2xl bg-lightlight/70 dark:bg-darklight shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
-            <div className="m-auto w-[220px] h-[220px] rounded-full bg-[url(/cat.jpg)] bg-cover"></div>
+          <div className="photo basis-1/3 flex items-center rounded-2xl bg-lightlight/70 dark:bg-darklight shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
+            <div className="m-auto my-2 w-2/5 skillSm:w-9/10 aspect-square rounded-full bg-[url(/cat.jpg)] bg-cover"></div>
           </div>
         </div>
         <div className="links-cont centre-div m-auto p-2 flex ">
@@ -188,10 +188,10 @@ export default function Home() {
           showMail={isMailVisible}
         />
         <div className="skills-container centre-div m-auto mt-10 p-2">
-          <div className="heading text-only text-2xl font-bold">
+          <div className="heading text-only not-skillMini:text-xl text-2xl font-bold">
             <h2>Current Technologies</h2>
           </div>
-          <div className="skill-boxes mt-5 grid grid-cols-4 gap-4">
+          <div className="skill-boxes mt-5 not-skillMini:pr-30 grid grid-cols-1 skillMini:grid-cols-2 skillSm:grid-cols-3 skillMed:grid-cols-4 gap-4">
             <div className="nextjs flex items-center p-2 pl-3 pr-5 bg-normal rounded-xl shadow-lg/20 dark:inset-shadow-xs/50 dark:inset-shadow-light">
               <div className="basis-1/3">
                 <RiNextjsFill size={"48px"} />

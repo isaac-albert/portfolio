@@ -135,7 +135,10 @@
   --breakpoint-linkBreakdown: 430px;
   --breakpoint-largeBg:1440px;
   --breakpoint-mediumBg:1080px;
-  --breakpoint-smallBg:720px;
+  --breakpoint-smallBg:740px;
+  --breakpoint-skillMed: 940px;
+  --breakpoint-skillSm: 620px;
+  --breakpoint-skillMini:490px;
 
   /* --bg-porsche-light: url(/public/porsche-white-1.jpg);
   --bg-porsche-dark: url(/public/porsche-black-1.jpg); */
