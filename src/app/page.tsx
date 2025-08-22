@@ -97,9 +97,9 @@ export default function Home() {
           >
             <div
               tabIndex={0}
-              className="github-button text-sectext h-8 cursor-pointer p-1 rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold hover:border-text active:duration-300 active:scale-100 active:105"
+              className="github-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1 rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold active:duration-300 active:scale-100 active:105"
             >
-              <FaGithub className="size-3.5 ml-2 mr-2  text-text" />
+              <FaGithub className="size-3.5 mr-2  text-text" />
               <span className="mr-2  text-[12px] select-none">Github</span>
             </div>
           </a>
@@ -111,9 +111,9 @@ export default function Home() {
           >
             <div
               tabIndex={0}
-              className="linkedin-button text-sectext h-8 cursor-pointer p-1 rounded-md  flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold hover:border-linkedin active:duration-100 active:scale-100 active:105 active:text-linkedin"
+              className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md  flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold hover:text-linkedin active:duration-100 active:scale-100 active:105 active:text-linkedin"
             >
-              <IoLogoLinkedin className="size-4 ml-2 mr-2  text-linkedin rounded-sm" />
+              <IoLogoLinkedin className="size-4 mr-2  text-linkedin rounded-sm" />
               <span className="mr-2 text-[12px] select-none tracking-wide">
                 Linkedin
               </span>
@@ -122,18 +122,18 @@ export default function Home() {
           <div
             onClick={DownloadResume}
             tabIndex={0}
-            className="linkedin-button text-sectext  h-8 cursor-pointer p-1 rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold hover:border-folder active:duration-100 active:scale-100 active:105 active:text-folder"
+            className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold hover:text-folder active:duration-100 active:scale-100 active:105 active:text-folder"
           >
-            <FaFolderOpen className="size-4 ml-2 mr-2  text-folder rounded-sm" />
+            <FaFolderOpen className="size-4 mr-2  text-folder rounded-sm" />
             <span className="mr-2 text-[12px] select-none tracking-wide">
               Resume
             </span>
           </div>
           <div
             tabIndex={0}
-            className="linkedin-button relative h-8 rounded-md   flex items-center justify-center"
+            className="linkedin-button relative h-8 rounded-md flex items-center justify-center"
           >
-            <SiGmail className="size-4 mt-1 mb-1 ml-3 mr-2  text-gmail rounded-sm" />
+            <SiGmail className="size-4 mt-1 mb-1 mr-2  text-gmail rounded-sm" />
             <span className="mr-2 w-30 text-sectext text-[12px] select-none tracking-wide whitespace-nowrap overflow-hidden">
               officialis...
             </span>
