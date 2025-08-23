@@ -25,6 +25,8 @@ export default function Home() {
 
   const [copied, setCopied] = useState(false);
 
+  const [toggleState, setToggleState] = useState("Education");
+
   const handleCopy = () => {
     setAnimationState("clicked");
     navigator.clipboard.writeText("officialisaacfranklyn@protonmail.com"); // 👈 text to copy
@@ -97,7 +99,7 @@ export default function Home() {
           >
             <div
               tabIndex={0}
-              className="github-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1 rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold active:duration-300 active:scale-100 active:105"
+              className="github-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1 rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105  hover:font-bold active:duration-300 active:scale-100 active:105"
             >
               <FaGithub className="size-3.5 mr-2  text-text" />
               <span className="mr-2  text-[12px] select-none">Github</span>
@@ -111,7 +113,7 @@ export default function Home() {
           >
             <div
               tabIndex={0}
-              className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md  flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold hover:text-linkedin active:duration-100 active:scale-100 active:105 active:text-linkedin"
+              className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md  flex items-center justify-center transition-all duration-300 hover:scale-105 hover:font-bold hover:text-linkedin active:duration-100 active:scale-100 active:105 active:text-linkedin"
             >
               <IoLogoLinkedin className="size-4 mr-2  text-linkedin rounded-sm" />
               <span className="mr-2 text-[12px] select-none tracking-wide">
@@ -122,7 +124,7 @@ export default function Home() {
           <div
             onClick={DownloadResume}
             tabIndex={0}
-            className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:-rotate-5 hover:font-bold hover:text-folder active:duration-100 active:scale-100 active:105 active:text-folder"
+            className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:font-bold hover:text-folder active:duration-100 active:scale-100 active:105 active:text-folder"
           >
             <FaFolderOpen className="size-4 mr-2  text-folder rounded-sm" />
             <span className="mr-2 text-[12px] select-none tracking-wide">
@@ -140,7 +142,7 @@ export default function Home() {
             <div className="h-7 bg-gradient-to-r from-transparent to-gridlines"></div>
             <div
               onClick={handleCopy}
-              className="cursor-pointer mt-0.5 text-background bg-buttonOutline h-6 w-6 rounded-sm flex items-center justify-center absolute right-0 top-0 bottom-0"
+              className="cursor-pointer mt-0.5 text-background bg-grey h-6 w-6 rounded-sm flex items-center justify-center absolute right-0 top-0 bottom-0"
             >
               {!copied && (
                 <IoCopy
@@ -160,9 +162,35 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="work-experience-heading-block relative mt-10 bg-grey h-6 rounded-sm p-[2px] flex items-center justify-center gap-2">
+          <div
+            className={`absolute top-[3px] bottom-[3px] w-89 bg-background rounded-sm transition-all duration-500 ease-out ${
+              toggleState === "Experience" ? "left-1" : "left-1/2"
+            }`}
+          />
+          <div
+            onClick={() => {
+              setToggleState("Experience");
+            }}
+            className={`Experience z-10 basis-1/2 cursor-pointer h-full rounded-sm flex items-center justify-center transition-colors duration-300 ${
+              toggleState === "Experience" ? "text-sectext" : "text-background"
+            } font-bold text-[12px] tracking-widest`}
+          >
+            <span className="select-none">Experience</span>
+          </div>
+          <div
+            onClick={() => {
+              setToggleState("Education");
+            }}
+            className={`Education z-10 basis-1/2 cursor-pointer h-full rounded-sm flex items-center justify-center transition-colors duration-300 ${
+              toggleState === "Education" ? "text-sectext" : "text-background"
+            } font-bold text-[12px] tracking-widest`}
+          >
+            <span className="select-none">Education</span>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-// border-1 border-buttonOutline
