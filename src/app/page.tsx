@@ -48,8 +48,8 @@ export default function Home() {
   };
 
   return (
-    <div className="fixed inset-0 bg-background font-google">
-      <div className="centre-div">
+    <div className="fixed inset-0 bg-background font-google z-0">
+      <div className="centre-div z-0">
         <div className="header w-full flex justify-between select-none">
           <span className="text-secsectext text-[14px] font-medium tracking-wide">
             Based in India
@@ -62,35 +62,36 @@ export default function Home() {
           </div>
         </div>
         <div className="name-pp-block flex mt-10">
-          <div className="Profile-Pic border-2 border-gridlines w-25 h-25 rounded-full flex items-center justify-center">
-            <div className="bg-[url(/cat.jpg)] bg-cover w-22.5 h-22.5 rounded-full"></div>
-          </div>
-          <div className="name-block select-none ml-5 h-25 pt-3.5 ">
-            <div className="text-[24px] text-text flex font-inter font-bold gap-2">
-              <span>Hi I&apos;m Isaac</span>
-              <span className="cursor-pointer transiton-all hover:animate-hand ">
-                👋
-              </span>
+          <div className="profile-pic-block">
+            <div className="Profile-Pic border-2 border-gridlines w-30 h-30 rounded-[30px] flex items-center justify-center">
+              <div className="bg-[url(/cat.jpg)] bg-cover w-27.5 h-27.5 rounded-[26px]"></div>
             </div>
-            <div className="tweet-style flex">
-              <span className="font-ibm text-sectext text-[14px]">
-                @isaacfranklyn
+          </div>
+          <div className="name-desc-block ml-7 flex flex-col justify-center">
+            <div className="name-block select-none">
+              <div className="text-[20px] text-text flex font-inter font-bold gap-2">
+                <span>Hi I&apos;m Isaac</span>
+                <span className="cursor-pointer transiton-all hover:animate-hand ">
+                  👋
+                </span>
+              </div>
+              <div className="tweet-style flex mt-0.5">
+                <span className="font-ibm text-sectext text-[12px]">
+                  @isaacfranklyn
+                </span>
+                <MdVerified className="text-verified ml-1.5 mt-0.75 size-3.5" />
+              </div>
+            </div>
+            <div className="description-block text-[14px] text-sectext leading-5 mt-5">
+              <span>
+                Just a{" "}
+                <span className="font-bold text-text">Fullstack Developer</span>{" "}
+                looking to contribute the web one line of code at a time.
               </span>
-              <MdVerified className="text-verified ml-2.5 mt-0.75" />
             </div>
           </div>
         </div>
-        <div className="description text-[14px] mt-5 text-sectext leading-6">
-          <span>
-            Just a{" "}
-            <span className="font-bold text-text">Fullstack Developer</span>{" "}
-            looking to change the web one line of code at a time. I build and
-            deploy websites quickly using modern tech stacks. I’m always eager
-            to learn new things—and I usually pick them up faster than you’d
-            expect :)
-          </span>
-        </div>
-        <div className="social-links flex items-center mt-5 gap-3">
+        <div className="social-links flex items-center mt-7 gap-3">
           <a
             href="https://github.com/isaac-albert"
             target="_blank"
@@ -162,9 +163,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="work-experience-heading-block relative mt-10 bg-grey h-6 rounded-sm p-[2px] flex items-center justify-center gap-2">
+        <div className="education-experience-heading-block relative mt-15 bg-grey h-8 rounded-sm p-[2px] pl-1 pr-1 flex items-center justify-center gap-2">
           <div
-            className={`absolute top-[3px] bottom-[3px] w-89 bg-background rounded-sm transition-all duration-500 ease-out ${
+            className={`sliding-window absolute top-[3px] bottom-[3px] w-89 bg-background rounded-sm transition-all duration-500 ease-out ${
               toggleState === "Experience" ? "left-1" : "left-1/2"
             }`}
           />
@@ -189,8 +190,29 @@ export default function Home() {
             <span className="select-none">Education</span>
           </div>
         </div>
+        <div className="education-experience-main-block relative overflow-hidden mt-5 border-1 border-gridlines/30 w-full h-80 rounded-lg">
+          <div
+            className={`education-content-block absolute inset-0 transition-transform duration-500 ease-in-out ${
+              toggleState === "Education"
+                ? "translate-x-0"
+                : "-translate-x-full"
+            }`}
+          >
+            <div className="Education-body m-2">
+              <span className="text-text">Education</span>
+            </div>
+          </div>
+          <div
+            className={`experience-content-block absolute inset-0  transition-transform duration-500 ease-in-out ${
+              toggleState === "Experience"
+                ? "translate-x-0"
+                : "translate-x-full"
+            }`}
+          >
+            <span className="text-text">Experience</span>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-
