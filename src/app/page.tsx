@@ -70,7 +70,7 @@ export default function Home() {
   };
 
   return (
-    <div className="fixed inset-0 bg-background font-google z-0">
+    <div className="fixed inset-0 bg-background font-google z-0 overflow-y-scroll">
       <div className="centre-div z-0">
         <div className="header w-full flex justify-between select-none">
           <span className="text-secsectext text-[14px] font-medium tracking-wide">
