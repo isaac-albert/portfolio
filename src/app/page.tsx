@@ -7,6 +7,8 @@ import { FaFolderOpen } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 import { IoCopy } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
+import { SiHtmx } from "react-icons/si";
+import { RiGraduationCapLine } from "react-icons/ri";
 
 import { useState } from "react";
 
@@ -61,7 +63,7 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <div className="name-pp-block flex mt-10">
+        <div className="name-pp-block flex mt-15">
           <div className="profile-pic-block">
             <div className="Profile-Pic border-2 border-gridlines w-30 h-30 rounded-[30px] flex items-center justify-center">
               <div className="bg-[url(/cat.jpg)] bg-cover w-27.5 h-27.5 rounded-[26px]"></div>
@@ -82,21 +84,31 @@ export default function Home() {
                 <MdVerified className="text-verified ml-1.5 mt-0.75 size-3.5" />
               </div>
             </div>
-            <div className="description-block text-[14px] text-sectext leading-5 mt-5">
-              <span>
-                Just a{" "}
-                <span className="font-bold text-text">Fullstack Developer</span>{" "}
-                looking to contribute the web one line of code at a time.
-              </span>
+            <div className="data mt-5 flex flex-col justify-center gap-1.5">
+              <div className="fullstack developer flex text-[12px] gap-2 text-sectext font-medium">
+                <SiHtmx className="text-text mt-0.5 size-4"/>
+                <span>Fullstack Developer</span>
+              </div>
+              <div className="graduation flex text-[12px] gap-2 text-sectext font-medium">
+                <RiGraduationCapLine className="text-text mt-0.25 size-4"/>
+                <span>
+                  Electrical and Electronics Engineering 2025
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="social-links flex items-center mt-7 gap-3">
+        <div className="description-block text-[14px] text-sectext leading-5 mt-7">
+          <span>
+            <span className="italic text-text">Building things through code since 2022.</span> I am a very fast learner, I might not know everything but I&apos;ll grasp it before you realize it :)
+          </span>
+        </div>
+        <div className="social-links flex items-center mt-5 gap-3">
           <a
             href="https://github.com/isaac-albert"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block"
+            className="github inline-block"
           >
             <div
               tabIndex={0}
@@ -110,7 +122,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/isaac-franklyn/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block"
+            className="linkedin inline-block"
           >
             <div
               tabIndex={0}
@@ -134,7 +146,7 @@ export default function Home() {
           </div>
           <div
             tabIndex={0}
-            className="linkedin-button relative h-8 rounded-md flex items-center justify-center"
+            className="mail-button relative h-8 rounded-md flex items-center justify-center"
           >
             <SiGmail className="size-4 mt-1 mb-1 mr-2  text-gmail rounded-sm" />
             <span className="mr-2 w-30 text-sectext text-[12px] select-none tracking-wide whitespace-nowrap overflow-hidden">
@@ -163,7 +175,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="education-experience-heading-block relative mt-15 bg-grey h-8 rounded-sm p-[2px] pl-1 pr-1 flex items-center justify-center gap-2">
+        <div className="education-experience-heading-block relative mt-20 bg-grey h-7 rounded-sm p-[2px] pl-1 pr-1 flex items-center justify-center gap-2">
           <div
             className={`sliding-window absolute top-[3px] bottom-[3px] w-89 bg-background rounded-sm transition-all duration-500 ease-out ${
               toggleState === "Experience" ? "left-1" : "left-1/2"
@@ -192,7 +204,7 @@ export default function Home() {
         </div>
         <div className="education-experience-main-block relative overflow-hidden mt-5 border-1 border-gridlines/30 w-full h-80 rounded-lg">
           <div
-            className={`education-content-block absolute inset-0 transition-transform duration-500 ease-in-out ${
+            className={`education-content-block absolute inset-0 transition-transform duration-500 ease-out ${
               toggleState === "Education"
                 ? "translate-x-0"
                 : "-translate-x-full"
@@ -203,7 +215,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className={`experience-content-block absolute inset-0  transition-transform duration-500 ease-in-out ${
+            className={`experience-content-block absolute inset-0  transition-transform duration-500 ease-out ${
               toggleState === "Experience"
                 ? "translate-x-0"
                 : "translate-x-full"

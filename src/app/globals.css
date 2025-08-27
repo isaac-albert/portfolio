@@ -70,7 +70,7 @@
 
 @layer components {
   .centre-div {
-    @apply w-180 h-200 mt-20 m-auto {/*border-1 border-gridlines/30*/}
+    @apply w-180 h-200 mt-10 m-auto {/*border-1 border-gridlines/30*/}
   }
 }
 
