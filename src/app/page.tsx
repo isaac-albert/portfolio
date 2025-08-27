@@ -244,7 +244,7 @@ export default function Home() {
               <div className="second-row flex h-full">
                 <div className="left-first-AU w-10 flex flex-col justify-start items-center">
                   <div className="w-10 h-10">
-                    <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center">
+                    <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center bg-text">
                       <div className="w-8 h-8 bg-[url(/AU-withoutBg.png)] bg-contain"></div>
                     </div>
                   </div>
