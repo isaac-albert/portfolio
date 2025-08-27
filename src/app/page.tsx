@@ -244,7 +244,7 @@ export default function Home() {
               <div className="second-row flex h-full">
                 <div className="left-first-AU w-10 flex flex-col justify-start items-center">
                   <div className="w-10 h-10">
-                    <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center bg-text">
+                    <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center">
                       <div className="w-8 h-8 bg-[url(/AU-withoutBg.png)] bg-contain"></div>
                     </div>
                   </div>
@@ -321,7 +321,7 @@ export default function Home() {
                 <div className="left-first-kellton w-10 flex flex-col justify-start items-center">
                   <div className="w-10 h-10">
                     <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center overflow-hidden">
-                      <div className="w-8 h-8 bg-[url(/kellton-tech-2.jpeg)] bg-cover"></div>
+                      <div className="w-8 h-4 bg-[url(/kellton-tech.png)] bg-cover"></div>
                     </div>
                   </div>
                   <div className="second-line-after-circle w-10 h-full flex justify-center">
