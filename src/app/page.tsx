@@ -86,21 +86,23 @@ export default function Home() {
             </div>
             <div className="data mt-5 flex flex-col justify-center gap-1.5">
               <div className="fullstack developer flex text-[12px] gap-2 text-sectext font-medium">
-                <SiHtmx className="text-text mt-0.5 size-4"/>
+                <SiHtmx className="text-text mt-0.5 size-4" />
                 <span>Fullstack Developer</span>
               </div>
               <div className="graduation flex text-[12px] gap-2 text-sectext font-medium">
-                <RiGraduationCapLine className="text-text mt-0.25 size-4"/>
-                <span>
-                  Electrical and Electronics Engineering 2025
-                </span>
+                <RiGraduationCapLine className="text-text mt-0.25 size-4" />
+                <span>EE Engineering 2025</span>
               </div>
             </div>
           </div>
         </div>
         <div className="description-block text-[14px] text-sectext leading-5 mt-7">
           <span>
-            <span className="italic text-text">Building things through code since 2022.</span> I am a very fast learner, I might not know everything but I&apos;ll grasp it before you realize it :)
+            <span className="italic text-text">
+              Building things through code since 2022.
+            </span>{" "}
+            I am a very fast learner, I might not know everything but I&apos;ll
+            grasp it before you realize it :)
           </span>
         </div>
         <div className="social-links flex items-center mt-5 gap-3">
@@ -210,8 +212,66 @@ export default function Home() {
                 : "-translate-x-full"
             }`}
           >
-            <div className="Education-body m-2">
-              <span className="text-text">Education</span>
+            <div className="Education-body mt-0 m-2 ml-3 h-full flex flex-col">
+              <div className="first-row flex h-8">
+                <div className="left-first-line w-10 h-8 flex justify-center">
+                  <div className="left-line border-1 border-grey/60"></div>
+                </div>
+              </div>
+              <div className="second-row flex h-full">
+                <div className="left-first-AU w-10 flex flex-col justify-start items-center">
+                  <div className="w-10 h-10">
+                    <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center">
+                      <div className="w-8 h-8 bg-[url(/AU-withoutBg.png)] bg-contain"></div>
+                    </div>
+                  </div>
+                  <div className="second-line-after-circle w-10 h-full flex justify-center">
+                    <div className="border-1 border-grey/60"></div>
+                  </div>
+                </div>
+                <div className="right-matter-AU">
+                  <div className="heading-title ml-3 flex flex-col gap-0.5">
+                    <span className="text-text text-[12px] font-semibold">
+                      Bachelors in Electrical and Electronics Engineering 2025
+                    </span>
+                    <span className="text-sectext text-[12px] tracking-widest">
+                      Andhra University - Visakhapatnam, India
+                    </span>
+                  </div>
+                  <div className="main-matter-AU mt-2 ml-8 flex flex-col gap-2">
+                    <div className="capstone-project leading-[16px]">
+                      <span className="text-sectext text-[11px] font-medium">
+                        <span className="text-text font-bold text-[12px]">
+                          Capstone Project:{" "}
+                        </span>
+                        Designed and developed a 3D magnetorquer rod for 3U
+                        CubeSat applications, demonstrating expertise in space
+                        technology and electromagnetic systems
+                      </span>
+                    </div>
+                    <div className="capstone-project leading-[16px]">
+                      <span className="text-sectext text-[11px] font-medium">
+                        <span className="text-text font-bold text-[12px]">
+                          Leadership Role:{" "}
+                        </span>
+                        Served as President of E4 Club, the college&apos;s
+                        premier entrepreneurial organization, fostering
+                        innovation and business development among students
+                      </span>
+                    </div>
+                    <div className="capstone-project leading-[16px]">
+                      <span className="text-sectext text-[11px] font-medium">
+                        <span className="text-text font-bold text-[12px]">
+                          Specialized Coursework:{" "}
+                        </span>
+                        Completed comprehensive curriculum in electronics,
+                        circuit design, signal processing, and electromagnetic
+                        theory
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
