@@ -23,6 +23,26 @@ const DownloadResume = () => {
 };
 
 export default function Home() {
+
+  const [fadeOpacity, setFadeOpacity] = useState(1);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const element = e.target as HTMLDivElement;
+    const { scrollTop, scrollHeight, clientHeight } = element;
+
+    // Calculate how close we are to the bottom
+    const scrollPercentage = scrollTop / (scrollHeight - clientHeight);
+
+    // Fade out the gradient as we approach the end
+    // When scrollPercentage is 0.8 or higher, start fading out
+    const newOpacity =
+      scrollPercentage >= 0.8
+        ? Math.max(0, 1 - (scrollPercentage - 0.8) / 0.2)
+        : 1;
+
+    setFadeOpacity(newOpacity);
+  };
+
   const [animationState, setAnimationState] = useState("idle");
 
   const [copied, setCopied] = useState(false);
@@ -212,7 +232,10 @@ export default function Home() {
                 : "-translate-x-full"
             }`}
           >
-            <div className="Education-body mt-0 m-2 ml-3 h-full flex flex-col">
+            <div
+              onScroll={handleScroll}
+              className="Education-body overflow-y-scroll mt-0 m-2 ml-3 h-95/100 flex flex-col"
+            >
               <div className="first-row flex h-8">
                 <div className="left-first-line w-10 h-8 flex justify-center">
                   <div className="left-line border-1 border-grey/60"></div>
@@ -273,6 +296,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div
+              className="final-row absolute z-100 overflow-hidden bottom-0 left-0 right-0 h-25 w-full bg-gradient-to-b from-transparent to-background pointer-events-none transition-opacity duration-200"
+              style={{ opacity: fadeOpacity }}
+            ></div>
           </div>
           <div
             className={`experience-content-block absolute inset-0  transition-transform duration-500 ease-out ${
@@ -281,7 +308,64 @@ export default function Home() {
                 : "translate-x-full"
             }`}
           >
-            <span className="text-text">Experience</span>
+            <div
+              onScroll={handleScroll}
+              className="Experience-body mt-0 m-2 ml-3 h-full flex flex-col"
+            >
+              <div className="first-row flex h-8">
+                <div className="left-first-line w-10 h-8 flex justify-center">
+                  <div className="left-line border-1 border-grey/60"></div>
+                </div>
+              </div>
+              <div className="second-row flex h-full">
+                <div className="left-first-kellton w-10 flex flex-col justify-start items-center">
+                  <div className="w-10 h-10">
+                    <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center overflow-hidden">
+                      <div className="w-8 h-8 bg-[url(/kellton-tech-2.jpeg)] bg-cover"></div>
+                    </div>
+                  </div>
+                  <div className="second-line-after-circle w-10 h-full flex justify-center">
+                    <div className="border-1 border-grey/60"></div>
+                  </div>
+                </div>
+                <div className="right-matter-kellton-tech">
+                  <div className="heading-title ml-3 flex flex-col gap-0.5">
+                    <span className="text-text text-[12px] font-semibold">
+                      Software Development Intern{" "}
+                      <span className="text-sectext italic">(2 months)</span>
+                    </span>
+                    <span className="text-sectext text-[12px] tracking-wide">
+                      Kellton Tech - Hyderabad, India
+                    </span>
+                  </div>
+                  <div className="main-matter-kellton-tech mt-2 ml-8 flex flex-col gap-2">
+                    <div className="capstone-project leading-[16px]">
+                      <span className="text-sectext text-[11px] font-medium">
+                        Developed backend systems using Spring Boot and Java for
+                        employee management and data processing across multiple
+                        departments
+                      </span>
+                    </div>
+                    <div className="capstone-project leading-[16px]">
+                      <span className="text-sectext text-[11px] font-medium">
+                        Gained hands-on experience in enterprise-level software
+                        development and database management
+                      </span>
+                    </div>
+                    <div className="capstone-project leading-[16px]">
+                      <span className="text-sectext text-[11px] font-medium">
+                        Collaborated with cross-functional teams in a fast-paced
+                        corporate environment
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="final-row absolute z-100 overflow-hidden bottom-0 left-0 right-0 h-25 w-full bg-gradient-to-b from-transparent to-background pointer-events-none transition-opacity duration-200"
+              style={{ opacity: fadeOpacity }}
+            ></div>
           </div>
         </div>
       </div>
