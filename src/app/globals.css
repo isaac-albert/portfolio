@@ -66,11 +66,14 @@
   --font-inter: "Inter", sans-serif;
   --font-roboto: "Roboto Mono", monospace;
   --font-google: "Google Sans Code", monospace;
+  --breakpoint-firstBreak: 740px;
+  --breakpoint-secondBreak: 600px;
+  --breakpoint-phone: 480px;
 }
 
 @layer components {
   .centre-div {
-    @apply w-180 h-200 mt-10 m-auto {/*border-1 border-gridlines/30*/}
+    @apply not-phone:mt-5 not-firstBreak:w-[90%] w-180 h-200 mt-10 m-auto {/*border-1 border-gridlines/30*/}
   }
 }
 

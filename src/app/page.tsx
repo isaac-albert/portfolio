@@ -23,6 +23,29 @@ const DownloadResume = () => {
 };
 
 export default function Home() {
+  const getUrlFromClassName = (className: string): string | null => {
+    // Check if className contains specific social platform
+    if (className.includes("Linkedin-button"))
+      return "https://www.linkedin.com/in/isaac-franklyn/";
+    if (className.includes("Github-button"))
+      return "https://github.com/isaac-albert";
+
+    return null; // No matching social platform found
+  };
+
+  const handleSocialClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const target = event.currentTarget as HTMLDivElement;
+    const className = target.className;
+    const url = getUrlFromClassName(className);
+
+    if (url) {
+      setTimeout(() => {
+        window.open(url, "_blank");
+      }, 300);
+    } else {
+      console.log("No URL found for className:", className);
+    }
+  };
 
   const [fadeOpacity, setFadeOpacity] = useState(1);
 
@@ -72,51 +95,51 @@ export default function Home() {
   return (
     <div className="fixed inset-0 bg-background font-google z-0 overflow-y-scroll">
       <div className="centre-div z-0">
-        <div className="header w-full flex justify-between select-none">
-          <span className="text-secsectext text-[14px] font-medium tracking-wide">
+        <div className="header not-phone:mt-7 w-full flex justify-between select-none">
+          <span className="text-secsectext not-phone:text-[12px] text-[14px] font-medium tracking-wide">
             Based in India
           </span>
           <div className="ping-boi flex gap-1">
-            <GoDotFill className="text-ping size-[8px] mt-2 mr-1 animate-ping" />
-            <span className="text-secsectext text-[14px] font-medium">
+            <GoDotFill className="text-ping not-phone:mt-1.75 not-phone:size-[7px] size-[8px] mt-2 mr-1 animate-ping" />
+            <span className="text-secsectext not-phone:text-[12px] text-[14px] font-medium">
               open for work
             </span>
           </div>
         </div>
-        <div className="name-pp-block flex mt-15">
+        <div className="name-pp-block flex mt-15 not-phone:mt-10">
           <div className="profile-pic-block">
-            <div className="Profile-Pic border-2 border-gridlines w-30 h-30 rounded-[30px] flex items-center justify-center">
-              <div className="bg-[url(/cat.jpg)] bg-cover w-27.5 h-27.5 rounded-[26px]"></div>
+            <div className="Profile-Pic border-2 border-gridlines not-phone:w-24 not-phone:h-24 w-30 h-30 rounded-[30px] flex items-center justify-center">
+              <div className="bg-[url(/cat.jpg)] bg-cover not-phone:w-21.5 not-phone:h-21.5  w-27.5 h-27.5 rounded-[26px]"></div>
             </div>
           </div>
           <div className="name-desc-block ml-7 flex flex-col justify-center">
             <div className="name-block select-none">
-              <div className="text-[20px] text-text flex font-inter font-bold gap-2">
+              <div className="not-phone:text-[16px] text-[20px] text-text flex font-inter font-bold gap-2">
                 <span>Hi I&apos;m Isaac</span>
-                <span className="cursor-pointer transiton-all -rotate-12 animate-hand ">
+                <span className=" cursor-pointer transiton-all -rotate-12 animate-hand ">
                   👋
                 </span>
               </div>
               <div className="tweet-style flex mt-0.5">
-                <span className="font-ibm text-sectext text-[12px]">
+                <span className="font-ibm text-sectext not-phone:text-[10px] text-[12px]">
                   @isaacfranklyn
                 </span>
-                <MdVerified className="text-verified ml-1.5 mt-0.75 size-3.5" />
+                <MdVerified className="text-verified ml-1.5 mt-0.75 not-phone:mt-0.5 not-phone:size-3 size-3.5" />
               </div>
             </div>
-            <div className="data mt-5 flex flex-col justify-center gap-1.5">
-              <div className="fullstack developer flex text-[12px] gap-2 text-sectext font-medium">
-                <SiHtmx className="text-text mt-0.5 size-4" />
+            <div className="data not-phone:mt-4 mt-5 flex flex-col justify-center gap-1.5">
+              <div className="fullstack developer flex not-phone:text-[10px] text-[12px] gap-2 text-sectext font-medium">
+                <SiHtmx className="text-text mt-0.5 not-phone:size-3 size-4" />
                 <span>Fullstack Developer</span>
               </div>
-              <div className="graduation flex text-[12px] gap-2 text-sectext font-medium">
-                <RiGraduationCapLine className="text-text mt-0.25 size-4" />
+              <div className="graduation flex not-phone:text-[10px] text-[12px] gap-2 text-sectext font-medium">
+                <RiGraduationCapLine className="text-text mt-0.25 not-phone:size-3 size-4" />
                 <span>EE Engineering 2025</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="description-block text-[14px] text-sectext leading-5 mt-7">
+        <div className="description-block not-phone:mt-10 not-phone:leading-6 text-[14px] text-sectext leading-5 mt-7">
           <span>
             <span className="italic text-text">
               Building things through code since 2022.
@@ -125,44 +148,34 @@ export default function Home() {
             grasp it before you realize it :)
           </span>
         </div>
-        <div className="social-links flex items-center mt-5 gap-3">
-          <a
-            href="https://github.com/isaac-albert"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="github inline-block"
+        <div className="social-links not-phone:mt-7 not-phone:gap-2 not-phone:flex-col not-phone:items-start flex items-center mt-5 gap-3">
+          <div
+            onClick={handleSocialClick}
+            tabIndex={0}
+            className="Github-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1 rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105  hover:font-bold active:duration-300 active:scale-90 active:105"
           >
-            <div
-              tabIndex={0}
-              className="github-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1 rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105  hover:font-bold active:duration-300 active:scale-100 active:105"
-            >
-              <FaGithub className="size-3.5 mr-2  text-text" />
-              <span className="mr-2  text-[12px] select-none">Github</span>
-            </div>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/isaac-franklyn/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="linkedin inline-block"
+            <FaGithub className="size-3.5 not-phone:ml-0.25 mr-2 text-text" />
+            <span className="not-phone:mr-0 mr-2 text-[12px] select-none">
+              Github
+            </span>
+          </div>
+          <div
+            onClick={handleSocialClick}
+            tabIndex={0}
+            className="Linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md  flex items-center justify-center transition-all duration-300 hover:scale-105 hover:font-bold hover:text-linkedin active:duration-100 active:scale-90 active:105 active:text-linkedin"
           >
-            <div
-              tabIndex={0}
-              className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md  flex items-center justify-center transition-all duration-300 hover:scale-105 hover:font-bold hover:text-linkedin active:duration-100 active:scale-100 active:105 active:text-linkedin"
-            >
-              <IoLogoLinkedin className="size-4 mr-2  text-linkedin rounded-sm" />
-              <span className="mr-2 text-[12px] select-none tracking-wide">
-                Linkedin
-              </span>
-            </div>
-          </a>
+            <IoLogoLinkedin className="size-4 mr-2  text-linkedin rounded-sm" />
+            <span className="not-phone:mr-0 mr-2 text-[12px] select-none tracking-wide">
+              Linkedin
+            </span>
+          </div>
           <div
             onClick={DownloadResume}
             tabIndex={0}
             className="linkedin-button text-sectext h-8 cursor-pointer pb-1 pt-1 pr-1  rounded-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:font-bold hover:text-folder active:duration-100 active:scale-100 active:105 active:text-folder"
           >
             <FaFolderOpen className="size-4 mr-2  text-folder rounded-sm" />
-            <span className="mr-2 text-[12px] select-none tracking-wide">
+            <span className="mr-2  text-[12px] select-none tracking-wide">
               Resume
             </span>
           </div>
@@ -171,10 +184,9 @@ export default function Home() {
             className="mail-button relative h-8 rounded-md flex items-center justify-center"
           >
             <SiGmail className="size-4 mt-1 mb-1 mr-2  text-gmail rounded-sm" />
-            <span className="mr-2 w-30 text-sectext text-[12px] select-none tracking-wide whitespace-nowrap overflow-hidden">
+            <span className="mr-2 w-30 items-center text-sectext text-[12px] select-none tracking-wide whitespace-nowrap overflow-hidden">
               officialis...
             </span>
-            <div className="h-7 bg-gradient-to-r from-transparent to-gridlines"></div>
             <div
               onClick={handleCopy}
               className="cursor-pointer mt-0.5 text-background bg-grey h-6 w-6 rounded-sm flex items-center justify-center absolute right-0 top-0 bottom-0"
@@ -197,10 +209,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="education-experience-heading-block relative mt-20 bg-grey h-7 rounded-sm p-[2px] pl-1 pr-1 flex items-center justify-center gap-2">
+        <div className="education-experience-heading-block relative not-phone:mt-10 mt-20 bg-grey h-7 rounded-sm p-[2px] pl-1 pr-1 flex items-center justify-center gap-2">
           <div
-            className={`sliding-window absolute top-[3px] bottom-[3px] w-89 bg-background rounded-sm transition-all duration-500 ease-out ${
-              toggleState === "Experience" ? "left-1" : "left-1/2"
+            className={`sliding-window absolute top-[3px] bottom-[3px] w-[49.5%] bg-background rounded-sm transition-all duration-500 ease-out ${
+              toggleState === "Experience"
+                ? "left-1"
+                : "left-[calc(100%-50%-1px)]"
             }`}
           />
           <div
@@ -234,22 +248,22 @@ export default function Home() {
           >
             <div
               onScroll={handleScroll}
-              className="Education-body overflow-y-scroll mt-0 m-2 ml-3 h-95/100 flex flex-col"
+              className="Education-body overflow-y-scroll mt-0 m-2 ml-3 h-[95%] flex flex-col"
             >
-              <div className="first-row flex h-8">
-                <div className="left-first-line w-10 h-8 flex justify-center">
+              <div className="first-row flex h-6">
+                <div className="left-first-line w-10 h-6 flex justify-center">
                   <div className="left-line border-1 border-grey/60"></div>
                 </div>
               </div>
-              <div className="second-row flex h-full">
+              <div className="second-row flex">
                 <div className="left-first-AU w-10 flex flex-col justify-start items-center">
                   <div className="w-10 h-10">
                     <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center">
                       <div className="w-8 h-8 bg-[url(/AU-withoutBg.png)] bg-contain"></div>
                     </div>
                   </div>
-                  <div className="second-line-after-circle w-10 h-full flex justify-center">
-                    <div className="border-1 border-grey/60"></div>
+                  <div className="second-line-after-circle w-10 flex-1 flex justify-center">
+                    <div className="border-1 border-grey/60 h-full"></div>
                   </div>
                 </div>
                 <div className="right-matter-AU">
@@ -310,10 +324,10 @@ export default function Home() {
           >
             <div
               onScroll={handleScroll}
-              className="Experience-body mt-0 m-2 ml-3 h-full flex flex-col"
+              className="Experience-body overflow-y-scroll mt-0 m-2 ml-3 h-[95%] flex flex-col"
             >
-              <div className="first-row flex h-8">
-                <div className="left-first-line w-10 h-8 flex justify-center">
+              <div className="first-row flex h-6">
+                <div className="left-first-line w-10 h-6 flex justify-center">
                   <div className="left-line border-1 border-grey/60"></div>
                 </div>
               </div>
@@ -324,8 +338,8 @@ export default function Home() {
                       <div className="w-8 h-4 bg-[url(/kellton-tech.png)] bg-cover"></div>
                     </div>
                   </div>
-                  <div className="second-line-after-circle w-10 h-full flex justify-center">
-                    <div className="border-1 border-grey/60"></div>
+                  <div className="second-line-after-circle w-10 flex-1 flex justify-center">
+                    <div className="border-1 border-grey/60 h-full"></div>
                   </div>
                 </div>
                 <div className="right-matter-kellton-tech">
