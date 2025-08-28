@@ -93,7 +93,7 @@ export default function Home() {
             <div className="name-block select-none">
               <div className="text-[20px] text-text flex font-inter font-bold gap-2">
                 <span>Hi I&apos;m Isaac</span>
-                <span className="cursor-pointer transiton-all hover:animate-hand ">
+                <span className="cursor-pointer transiton-all -rotate-12 animate-hand ">
                   👋
                 </span>
               </div>

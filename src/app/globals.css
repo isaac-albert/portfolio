@@ -189,16 +189,30 @@
   0% {
     transform: scale(1) rotate(0deg) 
   }
-  33.33% {
-    transform: scale(1.1) rotate(10deg);
+  10% {
+    transform: scale(1.2) rotate(30deg);
   }
-  66.67% {
-    transform: scale(1.1) rotate(10deg);
+  20% {
+    transform: scale(1.2) rotate(30deg) 
   }
-100% {
+  30% {
+    transform: scale(1.2) rotate(15deg);
+  }
+  40% {
+    transform: scale(1.2) rotate(30deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(15deg);
+  }
+  60% {
+    transform: scale(1.2) rotate(30deg) 
+  }
+  70% {
     transform: scale(1) rotate(0deg);
   }
 }
+
+
 
 @layer utilities {
   .animate-copied {
@@ -214,6 +228,7 @@
   }
 
   .animate-hand {
-    animation: hand 300ms ease-in-out;
+    animation: hand 3s ease-in-out infinite;
+    ;
   }
 }
