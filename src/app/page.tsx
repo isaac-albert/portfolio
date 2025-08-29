@@ -233,7 +233,7 @@ export default function Home() {
             }}
             className={`Experience z-10 basis-1/2 cursor-pointer h-full rounded-sm flex items-center justify-center transition-colors duration-300 ${
               toggleState === "Experience" ? "text-sectext" : "text-background"
-            } font-bold text-[12px] tracking-widest`}
+            } font-bold text-[12px] tracking-widest not-phone:tracking-wide`}
           >
             <span className="select-none">Experience</span>
           </div>
@@ -243,7 +243,7 @@ export default function Home() {
             }}
             className={`Education z-10 basis-1/2 cursor-pointer h-full rounded-sm flex items-center justify-center transition-colors duration-300 ${
               toggleState === "Education" ? "text-sectext" : "text-background"
-            } font-bold text-[12px] tracking-widest`}
+            } font-bold text-[12px] tracking-widest not-phone:tracking-wide`}
           >
             <span className="select-none">Education</span>
           </div>
@@ -400,37 +400,53 @@ export default function Home() {
             <div className="skillboxes-outerbox w-full mt-5 grid grid-cols-2 secondBreak:grid-cols-3 firstBreak:grid-cols-4 gap-4">
               <div className="box-1 typescript h-10  flex justify-start items-center gap-2">
                 <BiLogoTypescript className=" not-phone:size-5 size-6 text-typescript" />
-                <span className="text-[12px] text-text not-phone:text-[10px]">Typescript</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  Typescript
+                </span>
               </div>
               <div className="box-2 golang h-10 flex justify-start items-center gap-3">
                 <FaGolang className=" not-phone:size-6 size-8 text-golang" />
-                <span className="text-[12px] text-text not-phone:text-[10px]">GoLang</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  GoLang
+                </span>
               </div>
               <div className="box-3 react h-10 flex justify-start items-center gap-3">
                 <FaReact className=" not-phone:size-5 size-6 text-react" />
-                <span className="text-[12px] text-text not-phone:text-[10px]">React</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  React
+                </span>
               </div>
               <div className="box-4 python h-10 flex justify-start items-center gap-3">
                 <div className="python-logo bg-[url(/python.png)] bg-contain size-6"></div>
-                <span className="text-[12px] text-text not-phone:text-[10px]">Python</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  Python
+                </span>
               </div>
               <div className="box-5 nextjs h-10 flex justify-start items-center gap-3">
                 <div className=" not-phone:size-4 size-5 ml-0.5 relative rounded-full bg-text flex items-center justify-center">
                   <RiNextjsFill className="absolute not-phone:size-6 size-8 text-black" />
                 </div>
-                <span className="text-[12px] text-text not-phone:text-[10px]">NextJs</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  NextJs
+                </span>
               </div>
               <div className="box-6 figma h-10 flex justify-start items-center gap-3">
                 <Figma className="ml-2  size-3" />
-                <span className="text-[12px] text-text not-phone:text-[10px]">Figma</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  Figma
+                </span>
               </div>
               <div className="box-7 git h-10 flex justify-start items-center gap-3">
                 <FaGitAlt className=" not-phone:size-5 size-6 text-git" />
-                <span className="text-[12px] text-text not-phone:text-[10px]">Git</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  Git
+                </span>
               </div>
               <div className="box-8 postgresql h-10 flex justify-start items-center gap-3">
                 <BiLogoPostgresql className=" not-phone:size-5 size-7 text-postgres" />
-                <span className="text-[12px] text-text not-phone:text-[10px]">PostgreSQL</span>
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  PostgreSQL
+                </span>
               </div>
             </div>
           </div>
