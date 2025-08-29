@@ -66,7 +66,9 @@
   --color-golang: oklch(69.45% 0.1303 223.85); /* #00ADD8 */
   --color-react: oklch(83.2% 0.1167 218.69); /* #61DAFB */
   --color-git: oklch(64.86% 0.2013 32.76); /* #F05032 */
-  --color-postgres: oklch(49.73% 0.0875 245.25); /* #336791 */ 
+  --color-postgres: oklch(49.73% 0.0875 245.25); /* #336791 */
+  --color-tailwindcss: oklch(71.48% 0.1257 215.22); /* #06B6D4 */ 
+  --color-supabase: oklch(76.24% 0.1544 159.36); /* #3ECF8E */
   --color-figmaTopLeft: oklch(64.82% 0.2081 35.71);
   --color-figmaTopRight: oklch(71.92% 0.1752 28.69);
   --color-figmaMidLeft: oklch(63.09% 0.2349 299.84);

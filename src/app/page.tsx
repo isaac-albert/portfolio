@@ -15,7 +15,8 @@ import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { FaGitAlt } from "react-icons/fa";
 import Figma from "./figma";
-import { BiLogoPostgresql } from "react-icons/bi";
+import { RiSupabaseFill } from "react-icons/ri";
+import { RiTailwindCssFill } from "react-icons/ri";
 
 import { useState } from "react";
 
@@ -149,13 +150,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="description-block not-phone:mt-10 not-phone:leading-6 text-[14px] text-sectext leading-5 mt-7">
+        <div className="description-block not-phone:mt-10 not-phone:leading-6 text-[14px] text-sectext leading-6 mt-7">
           <span>
             <span className="italic text-text">
-              Building things through code since 2022.
+              I’ve been building with code since 2022.
             </span>{" "}
-            I am a very fast learner, I might not know everything but I&apos;ll
-            grasp it before you realize it :)
+            I don’t claim to know everything, but I learn quickly and enjoy
+            figuring things out.
           </span>
         </div>
         <div className="social-links not-phone:mt-7 not-phone:gap-2 not-phone:flex-col not-phone:items-start flex items-center mt-5 gap-3">
@@ -416,6 +417,12 @@ export default function Home() {
                   React
                 </span>
               </div>
+              <div className="box-3 tailwindcss h-10 flex justify-start items-center gap-3">
+                <RiTailwindCssFill className=" not-phone:size-6 size-7 text-tailwindcss" />
+                <span className="text-[12px] text-text not-phone:text-[10px]">
+                  TailwindCSS
+                </span>
+              </div>
               <div className="box-4 python h-10 flex justify-start items-center gap-3">
                 <div className="python-logo bg-[url(/python.png)] bg-contain size-6"></div>
                 <span className="text-[12px] text-text not-phone:text-[10px]">
@@ -443,9 +450,9 @@ export default function Home() {
                 </span>
               </div>
               <div className="box-8 postgresql h-10 flex justify-start items-center gap-3">
-                <BiLogoPostgresql className=" not-phone:size-5 size-7 text-postgres" />
+                <RiSupabaseFill className=" not-phone:size-4 size-5 text-supabase" />
                 <span className="text-[12px] text-text not-phone:text-[10px]">
-                  PostgreSQL
+                  Supabase
                 </span>
               </div>
             </div>
