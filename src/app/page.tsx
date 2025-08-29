@@ -9,6 +9,13 @@ import { IoCopy } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 import { SiHtmx } from "react-icons/si";
 import { RiGraduationCapLine } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
+import { FaGolang } from "react-icons/fa6";
+import { FaReact } from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
+import { FaGitAlt } from "react-icons/fa";
+import Figma from "./figma";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 import { useState } from "react";
 
@@ -93,7 +100,10 @@ export default function Home() {
   };
 
   return (
-    <div className="fixed inset-0 bg-background font-google z-0 overflow-y-scroll">
+    <div
+      onScroll={handleScroll}
+      className="fixed left-0 right-0 top-0 bottom-10 bg-background font-google z-0 overflow-y-scroll"
+    >
       <div className="centre-div z-0">
         <div className="header not-phone:mt-7 w-full flex justify-between select-none">
           <span className="text-secsectext not-phone:text-[12px] text-[14px] font-medium tracking-wide">
@@ -255,7 +265,7 @@ export default function Home() {
                   <div className="left-line border-1 border-grey/60"></div>
                 </div>
               </div>
-              <div className="second-row flex">
+              <div className="second-row flex h-full">
                 <div className="left-first-AU w-10 flex flex-col justify-start items-center">
                   <div className="w-10 h-10">
                     <div className="AU w-10 h-10 rounded-full border-2 border-grey/60 flex justify-center items-center">
@@ -382,6 +392,53 @@ export default function Home() {
             ></div>
           </div>
         </div>
+        <div className="skill-blocks mt-10 h-80">
+          <div className="title-skill text-text tracking-wider">
+            <span className="title text-[14px] font-bold">
+              Current Tech stack
+            </span>
+            <div className="skillboxes-outerbox w-full mt-5 grid grid-cols-2 secondBreak:grid-cols-3 firstBreak:grid-cols-4 gap-4">
+              <div className="box-1 typescript h-10  flex justify-start items-center gap-2">
+                <BiLogoTypescript className=" not-phone:size-5 size-6 text-typescript" />
+                <span className="text-[12px] text-text not-phone:text-[10px]">Typescript</span>
+              </div>
+              <div className="box-2 golang h-10 flex justify-start items-center gap-3">
+                <FaGolang className=" not-phone:size-6 size-8 text-golang" />
+                <span className="text-[12px] text-text not-phone:text-[10px]">GoLang</span>
+              </div>
+              <div className="box-3 react h-10 flex justify-start items-center gap-3">
+                <FaReact className=" not-phone:size-5 size-6 text-react" />
+                <span className="text-[12px] text-text not-phone:text-[10px]">React</span>
+              </div>
+              <div className="box-4 python h-10 flex justify-start items-center gap-3">
+                <div className="python-logo bg-[url(/python.png)] bg-contain size-6"></div>
+                <span className="text-[12px] text-text not-phone:text-[10px]">Python</span>
+              </div>
+              <div className="box-5 nextjs h-10 flex justify-start items-center gap-3">
+                <div className=" not-phone:size-4 size-5 ml-0.5 relative rounded-full bg-text flex items-center justify-center">
+                  <RiNextjsFill className="absolute not-phone:size-6 size-8 text-black" />
+                </div>
+                <span className="text-[12px] text-text not-phone:text-[10px]">NextJs</span>
+              </div>
+              <div className="box-6 figma h-10 flex justify-start items-center gap-3">
+                <Figma className="ml-2  size-3" />
+                <span className="text-[12px] text-text not-phone:text-[10px]">Figma</span>
+              </div>
+              <div className="box-7 git h-10 flex justify-start items-center gap-3">
+                <FaGitAlt className=" not-phone:size-5 size-6 text-git" />
+                <span className="text-[12px] text-text not-phone:text-[10px]">Git</span>
+              </div>
+              <div className="box-8 postgresql h-10 flex justify-start items-center gap-3">
+                <BiLogoPostgresql className=" not-phone:size-5 size-7 text-postgres" />
+                <span className="text-[12px] text-text not-phone:text-[10px]">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{ opacity: fadeOpacity }}
+          className="footer-gradient overflow-hidden fixed bottom-0 left-0 right-2 z-50 h-30 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none transition-opacity duration-200"
+        ></div>
       </div>
     </div>
   );
